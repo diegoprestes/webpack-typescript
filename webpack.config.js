@@ -2,6 +2,8 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'eval-source-map',
   entry: './src/index.ts',
   module: {
     rules: [
@@ -16,7 +18,7 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   output: {
-    publicPath: 'dist',
+    publicPath: '/dist/',
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
@@ -27,4 +29,9 @@ module.exports = {
       ],
     }),
   ],
+  devServer: {
+    host: '0.0.0.0',
+    compress: true,
+    port: 5000
+  }
 };

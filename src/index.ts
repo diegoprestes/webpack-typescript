@@ -1,7 +1,6 @@
 import { formData } from './forms';
 
-console.log('Hello');
-console.log('World 2');
+console.log('Index');
 const form = document.querySelector('form')!;
 
 form.addEventListener('submit', event => {
